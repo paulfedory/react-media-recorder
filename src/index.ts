@@ -158,13 +158,6 @@ export function useReactMediaRecorder({
     if (!mediaStream.current && askPermissionOnMount) {
       getMediaStream();
     }
-
-    return () => {
-      if (mediaStream.current) {
-        const tracks = mediaStream.current.getTracks();
-        tracks.forEach((track) => track.stop());
-      }
-    };
   }, [
     audio,
     screen,
