@@ -181,7 +181,7 @@ export function useReactMediaRecorder({
       if (isStreamEnded) {
         await getMediaStream();
       }
-      mediaRecorder.current = new MediaRecorder(mediaStream.current);
+      mediaRecorder.current = new MediaRecorder(mediaStream.current, mediaRecorderOptions);
       mediaRecorder.current.ondataavailable = onRecordingActive;
       mediaRecorder.current.onstop = onRecordingStop;
       mediaRecorder.current.onerror = () => {
